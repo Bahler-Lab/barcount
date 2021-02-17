@@ -15,10 +15,10 @@ These features also come with drawbacks, so you might want to consider if barcou
 
 ### Getting started
 1. Barcount requires Python 3 and a few common packages (including [biopython](https://biopython.org/)), available through the [anaconda distribution](https://www.anaconda.com/distribution/).
-2. Install pyphe by running 'pip install barcount' in your terminal.
-3. Open a new terminal and run 'barcount -h' which will show the in-built help page.
-4. You can test and familiarise yourself with barcount by analysing the example data provided in this GitHub repository.
-5. Make sure your barcode database is in the correct format (two-column csv file, barcode and gene id, no header).
+2. Download the python script from this repository
+3. Open a new terminal and run 'python barcount.py -h' which will show the in-built help page.
+4. Make sure your barcode database is in the correct format (two-column csv file, barcode and gene id, no header).
+
 ### Barcount manual
 
 ```
