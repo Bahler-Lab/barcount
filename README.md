@@ -1,7 +1,7 @@
 # barcount
 Python script for counting DNA barcodes in next generation sequencing data of pooled library experiments
 
-## Is barcount the right tool for my analysis?
+### Is barcount the right tool for my analysis?
 
 Barcount was developed with three particular goals: 
 1. It is a simple all-in-one solution that produces counts directly from fastq files.
@@ -9,17 +9,17 @@ Barcount was developed with three particular goals:
 3. Barcount implements checking for PCR duplicates based on two unique molecular identifier (UMI) regions which are identified by their flanking regions. Reads with the same barcode and the same UMIs are recorded but not counted towards the final result.
 
 These features also come with drawbacks, so you might want to consider if barcount is the right solution to your analysis:
-1. Barcount was not optimised for speed and is relatively slow, certainly compared to other NGS data analysis tools. It is also not parallelised, so only makes use of a single CPU core. However, we provide an example script to run multiple barcount instances on different fastq files. 
-2. The workflow is relatively complex, e.g. compared with an alternative approach of blasting your fastq file against a database of barcodes. Barcount plays to its strengths only when UMIs are used and the UMIs and barcodes must be identifiable by invariable flanking regions with known sequences. 
+1. The workflow is relatively complex, e.g. compared with an alternative approach of blasting your fastq file against a database of barcodes. Barcount plays to its strengths only when UMIs are used and the UMIs and barcodes must be identifiable by invariable flanking regions with known sequences. 
+2. Barcount is relatively slow, certainly compared to many other NGS data analysis tools, and it can take a few hours to analyse a medium-sized fastq file. It is also not parallelised, so only makes use of a single CPU core. However, the memory footprint is low and multiple fastq files can be analysed in parallel on a standard computer or server using the bash script provided. 
 
 
-## Getting started
+### Getting started
 1. Barcount requires Python 3 and a few common packages (including [biopython](https://biopython.org/)), available through the [anaconda distribution](https://www.anaconda.com/distribution/).
 2. Install pyphe by running 'pip install barcount' in your terminal.
 3. Open a new terminal and run 'barcount -h' which will show the in-built help page.
 4. You can test and familiarise yourself with barcount by analysing the example data provided in this GitHub repository.
-
-## Barcount manual
+5. Make sure your barcode database is in the correct format (two-column csv file, barcode and gene id, no header).
+### Barcount manual
 
 ```
 usage: barcount [-h] --barcode_table BARCODE_TABLE
@@ -90,7 +90,7 @@ optional arguments:
 						
 ```
 
-## Barcount algorithm
+### Barcount algorithm
 
 ![pyphe logo](https://github.com/Bahler-Lab/barcount/blob/master/documentation/algorithm.png)
 
