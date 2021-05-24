@@ -319,7 +319,8 @@ def print_dict_long(indict):
     return outstr
     
     
-def cli():
+if __name__ == '__main__':
+    
     #Set up parsing of command line arguments with argparse
     parser = argparse.ArgumentParser(description='Welcome to barcount v0.9. Count barcodes in fastq files and match to genes. Written by stephan.kamrad@crick.ac.uk and maintained at https://github.com/Bahler-Lab/barcount.')
     
